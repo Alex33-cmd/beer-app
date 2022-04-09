@@ -1,10 +1,12 @@
 <script setup>
-import HelloBeer from './components/HelloBeer.vue'
+import Heading from './components/Heading.vue'
+import Beer from './components/Beer.vue'
 </script>
 
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloBeer msg="Beer App v0.1" />
+  <Heading msg="Beer App v0.3" />
+  <Beer />
 </template>
 
 <style>
@@ -15,7 +17,7 @@ html {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #fff700;
   margin-top: 60px;
 }
