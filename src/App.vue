@@ -56,6 +56,7 @@ html {
 .content-wrapper-beer-user {
   text-align: center;
   position: relative;
+  height: 380px;
   margin: 2rem;
   padding: 2rem;
   background: var(--primary-color-0);
