@@ -26,10 +26,8 @@ function calcAge(birthDate) {
   return age;
 }
 
-let isLoaded = false;
-function onImgLoad() {
-  isLoaded = true;
-  console.log(isLoaded);
+function imgReplace(e) {
+  e.target.style = 'display:none';
 }
 </script>
 
@@ -38,7 +36,7 @@ function onImgLoad() {
   <!-- <pre v-else>{{ user }}</pre> -->
   <div class="content-wrapper-beer-user" v-else>
     <h2>Hello, {{user.first_name}}!</h2>
-    <img id="userAvatar" alt="User avatar" v-bind:src="user.avatar" onerror="this.onerror=null;this.src='src/assets/no-image.png'" />
+    <img v-if="!imgError" id="userAvatar" :src="user.avatar" @error="imgReplace" alt="User avatar" />
     <ul>
       <li><span class="beer-user-option">Name:</span> {{ user.first_name + ' ' + user.last_name }}</li>
       <li><span class="beer-user-option">Age:</span> {{ calcAge(user.date_of_birth)  }}</li>
