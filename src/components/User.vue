@@ -1,14 +1,8 @@
 <script setup>
 import { ref } from 'vue'
 
-defineProps({
-  msg: String
-})
-
-const API_URL = `https://random-data-api.com/api/`
-const data = ['users/random_user', 'beer/random_beer']
-
-const randomUser = ref(data[0])
+const API_URL = `https://random-data-api.com/api/`;
+const randomUser = ref('users/random_user')
 const user = ref(null)
 
 async function fetchUser() {
@@ -34,32 +28,33 @@ function calcAge(birthDate) {
 </script>
 
 <template>
-    <h2>User</h2>
-  <p v-if="!user">Loading...</p>
+  <div class="content-wrapper-beer-user" v-if="!user"></div>
   <!-- <pre v-else>{{ user }}</pre> -->
-  <ul v-else>
-    <li><img id="userAvatar" alt="User avatar" v-bind:src="user.avatar" /></li>
-    <li><span class="option">Name:</span> {{ user.first_name + ' ' + user.last_name }}</li>
-    <li><span class="option">Age:</span> {{ calcAge(user.date_of_birth)  }}</li>
-    <li><span class="option">Employment:</span> {{ user.employment.title }}</li>
-  </ul>
+  <div class="content-wrapper-beer-user" v-else>
+    <h2>Hello, {{user.first_name}}!</h2>
+    <img id="userAvatar" alt="User avatar" v-bind:src="user.avatar" />
+    <ul>
+      <li><span class="beer-user-option">Name:</span> {{ user.first_name + ' ' + user.last_name }}</li>
+      <li><span class="beer-user-option">Age:</span> {{ calcAge(user.date_of_birth)  }}</li>
+      <li><span class="beer-user-option">Employment:</span> {{ user.employment.title }}</li>
+    </ul>
+  </div>
 </template>
 
 <style scoped>
+img {
+  margin: 0 auto;
+  border: 1px var(--primary-color-6) solid;
+  border-radius: 50%;
+  /* border-radius: var(--border-radius); */
+  box-shadow: 3px 3px 6px 0px var(--primary-color-5);
+}
 ul {
+  text-align: left;
   list-style: none;
   padding: 0;
 }
 #userAvatar {
   max-width: 200px;
-}
-.option{
-  font-weight: 800;
-  color: rgb(124, 75, 0);
-}
-button {
-  font-size: 1.2rem;
-  padding: 1rem;
-  background-color: bisque;
 }
 </style>

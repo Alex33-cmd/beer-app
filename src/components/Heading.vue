@@ -7,9 +7,11 @@ defineProps({
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+  <div class="header-wrapper">
+    <img alt="Beer logo" src="../assets/logo.png" />
+    <h1>Beer App v1.0</h1>
+  </div>
 </template>
 
 <style scoped>
-
 </style>
