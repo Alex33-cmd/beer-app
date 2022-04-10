@@ -26,14 +26,15 @@ function Capitalize(str) {
 </script>
 
 <template>
+  <h2>Beer</h2>
   <p v-if="!beer">Loading...</p>
   <!-- <pre v-else>{{ beer }}</pre> -->
-  <ul>
-    <li v-for="opts, keyName in beer" :key="keyName">
+  <ul v-else>
+    <!-- <li v-for="opts, keyName in beer" :key="keyName">
       <span class="option">{{ Capitalize(keyName) }}: </span>
       <span class="item">{{opts}}</span>
-    </li>
-    <!-- <li><span class="option">Brand:</span> {{ beer.brand }}</li>
+    </li> -->
+    <li><span class="option">Brand:</span> {{ beer.brand }}</li>
     <li><span class="option">Name:</span> {{ beer.name }}</li>
     <li><span class="option">Style:</span> {{ beer.style }}</li>
     <li><span class="option">Hop:</span> {{ beer.hop }}</li>
@@ -41,7 +42,7 @@ function Capitalize(str) {
     <li><span class="option">Malts:</span> {{ beer.malts }}</li>
     <li><span class="option">Ibu:</span> {{ beer.ibu }}</li>
     <li><span class="option">Alcohol:</span> {{ beer.alcohol }}</li>
-    <li><span class="option">Blg:</span> {{ beer.blg }}</li> -->
+    <li><span class="option">Blg:</span> {{ beer.blg }}</li>
   </ul>
   <button @click="fetchData">Fetch next beer</button>
 </template>

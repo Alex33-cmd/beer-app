@@ -1,12 +1,16 @@
 <script setup>
 import Heading from './components/Heading.vue'
+import User from './components/User.vue'
 import Beer from './components/Beer.vue'
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <Heading msg="Beer App v0.3" />
-  <Beer />
+  <div >
+    <img alt="Beer logo" src="./assets/logo.png" />
+    <Heading msg="Beer App v0.5" />
+    <User />
+    <Beer />
+  </div>
 </template>
 
 <style>
